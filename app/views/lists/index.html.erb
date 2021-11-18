@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://echoboomer.pt/wp-content/uploads/2020/03/cinemas-em-portugal.jpg)">
+<h1 class='mb-5'>Your lists of movies</h1>
+</div>
+<div class="container">
+  <div class="justify-content-md-end mr-2">
+  <%= link_to(new_list_path) do%>
+    <p class='btn btn-lg btn-primary mt-3 btn--add'><i class="fas fa-plus mr-1"></i> List</p>
+  <% end %>
+  </div>
+  <div class="cards">
+    <% @lists.each do |item| %>
+      <%= link_to list_path(item.id) do %>
+        <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/300/200)">
+          <%= item.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

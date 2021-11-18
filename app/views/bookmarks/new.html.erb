@@ -1,0 +1,8 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <div class="mt-3 ml-2">
+    <%= f.input :comment, label: 'Comment', error: 'Comment can not be blank' %>
+  <%#  <%= f.association :movie %>
+    <%= f.input :movie_id, collection: @movies %>
+  </div>
+    <%= f.button :submit, class: 'ml-2 btn btn-primary' %>
+<% end %>

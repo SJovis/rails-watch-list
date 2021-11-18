@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+img {
+  width: 200px;
+}
+
+.btn--add {
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+}

@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://echoboomer.pt/wp-content/uploads/2020/03/cinemas-em-portugal.jpg)">
+<h1 class='mb-5'><%= @list.name %>'s list</h1>
+</div>
+<div class="container">
+  <div class="justify-content-md-end mr-2">
+  <%= link_to(new_list_bookmark_path(@list)) do%>
+    <p class='btn btn-lg btn-primary mt-3 btn--add'><i class="fas fa-plus mr-1"></i> Bookmark</p>
+  <% end %>
+  </div>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-movie">
+        <img src="<%= bookmark.movie.poster_url %>" />
+        <div class="card-movie-infos">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-title"><% bookmark.movie.rating.times do %> <i class="fas fa-star text-warning"></i> <% end %></p>
+          <p class="card-text"><small class="text-muted"><%= bookmark.movie.overview %></small></p>
+          <p class="card-text text-warning"><%= bookmark.comment %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
