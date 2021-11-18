@@ -9,7 +9,15 @@ require("@rails/activestorage").start()
 require("channels")
 
 import 'bootstrap';
+import { showForm, closeForm } from "../components/form"
+// import { closeForm } from "../components/form";
 
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  showForm();
+  closeForm();
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

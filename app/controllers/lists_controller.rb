@@ -5,7 +5,10 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def show; end
+  def show
+    @movies = Movie.all
+    @bookmark = Bookmark.new
+  end
 
   def new
     @list = List.new
