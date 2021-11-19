@@ -3,9 +3,12 @@
 </div>
 <div class="container">
   <div class="justify-content-md-end mr-2">
-  <%= link_to(new_list_path) do%>
-    <p class='btn btn-lg btn-primary mt-3 btn--add'><i class="fas fa-plus mr-1"></i> List</p>
-  <% end %>
+  <p class='btn btn-lg btn-primary mt-3 btn--add'>
+     <i class="fas fa-plus mr-1"></i> List
+  </p>
+  </div>
+  <div id="new-bookmark"  style="display:none;" class="mb-5 form--bookmark" >
+    <%= render "list_form" %>
   </div>
   <div class="cards">
     <% @lists.each do |item| %>

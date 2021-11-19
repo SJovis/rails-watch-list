@@ -1,0 +1,8 @@
+<%= simple_form_for(@list) do |f| %>
+  <div class="mt-3 ml-2">
+    <%= f.input :name, label: 'List name', error: 'List name can not be blank' %>
+    <%= f.input :photo, as: :file %>
+  </div>
+    <%= f.button :submit, class: 'ml-2 btn btn-primary' %>
+    <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-outline-primary btn-none cancel', onclick: 'closeForm()' %>
+<% end %>

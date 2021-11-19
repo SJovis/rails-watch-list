@@ -2,9 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-}
 
-.card-category {
+  a {
+    text-decoration: none;
+  }
+
+  .card-category {
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -17,7 +20,30 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    &:hover {
+      background-color: #94a8c183;
+      background-blend-mode: overlay;
+      text-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+      border: 4px solid $primary;
+    }
+  }
 }
+
+// .card-category {
+//   background-size: cover;
+//   background-position: center;
+//   height: 180px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
 
 
 // Smallest device
