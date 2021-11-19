@@ -13,9 +13,15 @@
   <div class="cards">
     <% @lists.each do |item| %>
       <%= link_to list_path(item.id) do %>
-        <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key, height: 300, width: 200, crop: :fill %>)">
-          <%= item.name %>
-        </div>
+        <% if item.photo.attached? %>
+            <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path item.photo.key, height: 300, width: 200, crop: :fill %>)">
+              <%= item.name %>
+            </div>
+        <% else %>
+            <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dv6cge9lp/image/upload/v1637327362/production/movie-popcorn_wd2xji.jpg)">
+              <%= item.name %>
+            </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
